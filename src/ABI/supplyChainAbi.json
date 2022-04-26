@@ -1,0 +1,1457 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			}
+		],
+		"name": "AuthorityUpdated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_caller",
+				"type": "address"
+			}
+		],
+		"name": "authorizeCaller",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_contactNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_role",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_profileHash",
+				"type": "string"
+			}
+		],
+		"name": "createUserForAdmin",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_caller",
+				"type": "address"
+			}
+		],
+		"name": "deAuthorizeCaller",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "DoneBatchAudit",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "DoneBatchExporting",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "DoneBatchImporting",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "DoneBatchOperation",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "DoneBatchProcessing",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipRenounced",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_userAddFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userEditFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_batchAddFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_auditorBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_operatorBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_exporterBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_importerBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_processorBatchUpdateFee",
+				"type": "uint256"
+			}
+		],
+		"name": "setActionFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_registrationNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extractorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extractorAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_auditorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_operatorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_exporterAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_importerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_processorAddress",
+				"type": "address"
+			}
+		],
+		"name": "setBatchDetails",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
+			}
+		],
+		"name": "setTokenAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "contactNo",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "profileHash",
+				"type": "string"
+			}
+		],
+		"name": "UserCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
+			}
+		],
+		"name": "UserRoleUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "contactNo",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "profileHash",
+				"type": "string"
+			}
+		],
+		"name": "UserUpdated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "batchNo",
+				"type": "address"
+			}
+		],
+		"name": "performBatchAudit",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_extractionMethod",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_oilClass",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			}
+		],
+		"name": "updateAuditData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_destinationAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_shipNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_shipName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_estimateDateTime",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_exporterId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			}
+		],
+		"name": "updateExporterData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_shipNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_shipName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_transportInfo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_terminalName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_terminalCoordinates",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_importerId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			}
+		],
+		"name": "updateImporterData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_hydrocarbonVariety",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_operatorAbi",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_gravity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			}
+		],
+		"name": "updateOperatorData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_temperature",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_fuelGrade",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_internalBatchNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_packagingDateTime",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_processorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_processorAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			}
+		],
+		"name": "updateProcessorData",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_contactNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_role",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_profileHash",
+				"type": "string"
+			}
+		],
+		"name": "updateUser",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_contactNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_role",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_profileHash",
+				"type": "string"
+			}
+		],
+		"name": "updateUserForAdmin",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "authorizedCaller",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getActionFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_userAddFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userEditFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_batchAddFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_auditorBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_operatorBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_exporterBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_importerBatchUpdateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_processorBatchUpdateFee",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getAuditorData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "extractionMethod",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "oilClass",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getBatchDetails",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "registrationNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extractorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extractorAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "auditorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operatorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "exporterAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "importerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "processorAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getBatchNextAction",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getExporterData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "destinationAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "shipNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "shipName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "estimateDateTime",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "exporterId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getImporterData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "shipNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "shipName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "transportInfo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "terminalName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "terminalCoordinates",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "importerId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getNextAction",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "action",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getOperatorData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "hydrocarbonVariety",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "operatorAbi",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "gravity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_batchNo",
+				"type": "address"
+			}
+		],
+		"name": "getProcessorData",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "quantity",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "temperature",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fuelGrade",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "internalBatchNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "packagingDateTime",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "processorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "processorAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getRoles",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTokenAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getUser",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "extraData",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "contactNo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "role",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isActive",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "profileHash",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getUserAddressRole",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "getUserRole",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			}
+		],
+		"name": "isAlreadyUser",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastAccess",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

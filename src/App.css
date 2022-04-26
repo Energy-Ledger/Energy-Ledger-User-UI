@@ -1,0 +1,132 @@
+.text-xxs{font-size: 10px;}
+.popup{height:500px;overflow-y: auto;}
+.popup::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+}
+
+.popup::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.popup::-webkit-scrollbar-thumb
+{
+	background-color: #D3D3D3;
+	border: 2px solid #D3D3D3;
+  border-radius: 10px;
+}
+.login-box{
+  max-width: 470px;
+  min-height: 470px;
+}
+
+
+    @media(max-width: 1199px){
+    thead{display:none;}
+    tr{display:block;position: relative;}
+    td{display:inline-block}
+    td.image{float:left}
+    .view-icn{position: absolute;right: 20px;top: 10px;}
+    .trans-code{width:100%;}
+  }
+  input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+  }
+.white-image{
+  filter: brightness(100)contrast(100);
+}
+.clock {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: solid 5px #ffb546;
+  margin: 25px auto;
+}
+.hours {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    top: 50%;
+    animation: you-spin-me-round-round-baby-right-round 10s linear 1s infinite;
+    left: 0px;
+}
+.hours:before {
+    content: "";
+    height: 5px;
+    width: 16px;
+    position: absolute;
+    right: 11px;
+    background: #ffb546;
+    border-radius: 5px;
+}
+.minutes {
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    top: 50%;
+    animation: you-spin-me-round-round-baby-right-round 1s linear 0s infinite;
+    left: 0px;
+    transform: translateY(-50%);
+}
+.minutes:before {
+    content: "";
+    height: 5px;
+    width: 22px;
+    position: absolute;
+    right: 5px;
+    background: #ffb546;
+    border-radius: 5px;
+}
+@keyframes you-spin-me-round-round-baby-right-round {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.waiting{
+    color: #ffb546;
+}
+.im-size {
+    display: block;
+    height: 60px;
+    width: 60px;
+    color: #0db14b; 
+  }
+  
+  .circleSuccess {
+    stroke-dasharray: 76;
+    stroke-dashoffset: 76;
+    animation: draw 1s forwards;
+  }
+  
+  .tick {
+    stroke-dasharray: 18;
+    stroke-dashoffset: 18;
+    animation: draw 1s forwards 1s;
+  }
+  
+  @keyframes draw { 
+    to { stroke-dashoffset: 0 } 
+  }
+
+  svg.cross__svg {
+    stroke: red;
+    strokeWidth: 2px;
+    margin: 10px auto;
+}
+
+input.customNumInput::-webkit-outer-spin-button,
+input.customNumInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input.customNumInput[type=number] {
+  -moz-appearance: textfield;
+}
+.react-datepicker-popper{
+  z-index: 20;
+}
